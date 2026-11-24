@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sable Doré — Espace gérant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23f6f3ec' stroke='%23b8663a' stroke-width='3'/%3E%3Cpath d='M49 26A30 25 0 1 1 23.5 42' fill='none' stroke='%2334332e' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+body{background:var(--sand-2)}
+.adm-top{background:var(--ink);color:var(--sand-2)}
+.adm-top .wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:14px max(4vw,16px)}
+.adm-top .logo{color:var(--sand-2)}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.tabs a{color:#d9c9ae;text-decoration:none;padding:9px 14px;border-radius:999px;font-size:15px;min-height:40px;display:inline-flex;align-items:center}
+.tabs a.on,.tabs a:hover{background:rgba(245,236,220,.14);color:#fff}
+.badge{display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:11px;background:var(--coral);color:#fff;font-size:12px;margin-left:6px;padding:0 6px}
+main.wrap{padding:28px max(4vw,16px) 64px}
+.panel{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:clamp(16px,3vw,28px);margin-bottom:22px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.bar input,.bar select{width:auto;min-width:180px;flex:1}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:14px Jost;cursor:pointer;min-height:38px}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+table.t{width:100%;border-collapse:collapse;font-size:15px}
+.t th{text-align:left;font-weight:500;color:var(--ink-2);font-size:13px;padding:8px;border-bottom:1.5px solid var(--line)}
+.t td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+.t .n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.t tfoot td{font-weight:600;border:0}
+.st{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;white-space:nowrap;background:var(--sand-2)}
+.st.preuve_recue{background:#fde6c8;color:#8a4b0f}.st.payee{background:#dcefe5;color:#1f5d43}.st.livree{background:#e4e8f4;color:#2c3e73}.st.annulee{background:#eee;color:#777}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:22px}
+.kpi{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:18px}
+.kpi b{display:block;font:600 clamp(26px,3vw,34px) "Cormorant Garamond",serif;white-space:nowrap}
+.kpi span{font-size:13px;color:var(--ink-2)}
+.kpi.main{background:var(--ink);color:var(--sand-2)}.kpi.main span{color:#d9c9ae}
+.bars{display:grid;gap:4px}
+.brow{display:grid;grid-template-columns:70px minmax(0,1fr) 110px;gap:10px;align-items:center;font-size:14px}
+.brow .trk{background:var(--sand-2);border-radius:6px;height:20px;overflow:hidden}
+.brow .fill{height:100%;background:var(--gold);border-radius:6px}
+.brow .v{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.colors{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.ccard{border:1.5px solid var(--line);border-radius:var(--r);padding:14px;background:#fff}
+.ccard .prev{height:90px;border-radius:12px;overflow:hidden;margin-bottom:10px}
+.ccard .prev img,.ccard .prev svg{width:100%;height:100%;object-fit:cover;display:block}
+.inline{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.inline input[type=color]{width:56px;padding:4px}
+.inline input[type=number]{width:110px}
+.check{display:flex;gap:8px;align-items:center;font-size:15px}.check input{width:22px;min-height:22px}
+.trow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:10px;align-items:end;margin-bottom:8px}
+.det{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+@media(max-width:700px){.det{grid-template-columns:minmax(0,1fr)}}
+.proof img{border-radius:12px;max-height:420px;margin:auto;border:1px solid var(--line)}
+.login{max-width:420px;margin:10vh auto;background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:32px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 20px;border-radius:999px;z-index:80;font-size:15px}
+@media(max-width:600px){.stack thead{display:none}.stack tr{display:grid;padding:10px 0;border-bottom:1px solid var(--line)}.stack td{border:0;padding:3px 0 3px 8em;text-align:left!important;position:relative}.stack td::before{content:attr(data-l);position:absolute;left:0;width:7.5em;color:var(--ink-2);font-size:13px}.stack td:empty{display:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="1.4" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/><feComposite in2="SourceGraphic" operator="in"/></filter>
+</svg>
+<div id="demo-flag" class="demo-flag hidden">Mode démonstration : mot de passe « demo ». Les données restent dans ce navigateur.</div>
+
+<section id="login" class="login hidden">
+  <h2>Espace gérant</h2>
+  <p class="muted">Réservé à l'administratrice de Sable Doré.</p>
+  <form id="login-form">
+    <div class="field"><label for="l-email">E-mail</label><input id="l-email" type="email" autocomplete="username" required></div>
+    <div class="field"><label for="l-pw">Mot de passe</label><input id="l-pw" type="password" autocomplete="current-password" required></div>
+    <div id="l-err" class="err-box hidden"></div>
+    <button class="btn" style="width:100%">Se connecter</button>
+  </form>
+  <p class="muted" style="margin-top:16px"><a href="index.html">← Retour à la boutique</a></p>
+</section>
+
+<div id="app" class="hidden">
+  <header class="adm-top"><div class="wrap">
+    <a class="logo" href="index.html" title="Voir la boutique"><svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M49 22A34 28 0 1 1 20.5 41" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round"/></svg><span class="wordmark">Sable Doré</span><span style="font:400 14px Jost;opacity:.7;margin-left:6px">Gérant</span></a>
+    <nav class="tabs" id="tabs">
+      <a href="#monsite" data-tab="monsite">Mon site</a>
+      <a href="#commandes" data-tab="commandes">Commandes<span id="b-check" class="badge hidden"></span></a>
+      <a href="#factures" data-tab="factures">Factures</a>
+      <a href="#ventes" data-tab="ventes">Ventes</a>
+      <a href="#catalogue" data-tab="catalogue">Catalogue</a>
+      <a href="#idees" data-tab="idees">Idées</a>
+      <a href="#parametres" data-tab="parametres">Société, paiement, prix</a>
+      <a href="#" id="logout">Déconnexion</a>
+    </nav>
+  </div></header>
+  <main class="wrap" id="view"></main>
+</div>
+
+<div class="modal" id="ord-modal"><div class="modal-box" id="ord-box"></div></div>
+
+<script src="assets/config.js"></script>
+<script src="assets/api.js"></script>
+<script src="assets/doc.js"></script>
+<script src="assets/content.js"></script>
+<script src="assets/ideas.js"></script>
+<script src="assets/admin.js"></script>
+</body>
+</html>
