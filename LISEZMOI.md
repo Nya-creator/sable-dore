@@ -65,3 +65,4 @@ Le domaine devient actif en général en quelques heures, parfois jusqu'à 24 h.
 - Un projet Supabase gratuit se met en pause après 7 jours **sans aucune activité**. Si ça arrive, un clic sur *Restore* dans Supabase suffit. Dès que le site reçoit des visites régulières, la question ne se pose plus.
 - La clé « anon/publishable » est faite pour être publique : la sécurité vient des règles de la base. Les commandes, les preuves et les factures ne sont lisibles que par le compte admin.
 - Le prix est **recalculé par le serveur** à chaque commande : un client ne peut pas modifier son total.
+- 
